@@ -34,8 +34,12 @@ git  push origin
 @echo  准备使用hexo g 生成网页
 hexo g 
 
+pause
+@echo 当前路径%cd%
 @echo 切换到public目录下
-cd C:\hexo-source\public
+cd /d C:\hexo-source\public
+@echo 当前路径%cd%
+pause
 
 git add .
 @echo  git add . 添加文档完成
