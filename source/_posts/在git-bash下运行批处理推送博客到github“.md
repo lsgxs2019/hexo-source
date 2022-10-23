@@ -22,17 +22,28 @@ categories: hexo
 ~~~
 @echo off
 
-add .
-git commit -m "udpate"
-git  push origin 
+git add .
+@echo  git add . 添加文档完成
 
+git commit -m "udpate"
+@echo  git  commit 完成
+
+git  push origin 
+@echo  推送到github 完成
+
+@echo  准备使用hexo g 生成网页
 hexo g 
 
-cd public 
+@echo 切换到public目录下
+cd C:\hexo-source\public
 
-add .
+git add .
+@echo  git add . 添加文档完成
+
 git commit -m "udpate"
-git  push origin 
+@echo  git  commit 完成
 
+git  push origin 
+@ 推送到lsgxs2019.github.io 完成
 ~~~
 
