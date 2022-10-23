@@ -13,7 +13,7 @@ categories: hexo
 
 * git reflog  查看最近推送记录，根据备注选择合适的回撤记录，所以要认真写备注，要不然在回撤的时候没法做决定^-^
 
-* git reset  --hard   id-xxx    -- 这里最后的参数标识特定的推送记录
+* git reset  `--hard`   id-xxx    -- 这里最后的参数标识特定的推送记录
 * git push -f origin main 
 * git pull 
 
