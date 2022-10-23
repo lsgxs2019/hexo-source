@@ -1,0 +1,130 @@
+---
+title: styling a biography page using css
+date: 2022-08-05 17:40:54
+tags: 
+  - html
+  - css 
+categories: web
+---
+
+> [Attributions and copyright licensing](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license) by [Mozilla Contributors](https://developer.mozilla.org/en-US/docs/MDN/About/contributors.txt) is licensed under [CC-BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)
+
+ [Styling a biography page - Learn web development | MDN (mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Styling_a_biography_page) 
+
+With the things you have learned in the last few lessons you should find that you can format simple text documents using CSS to add your own style to them. This assessment gives you a chance to do that.
+
+| Prerequisites: | Before attempting this assessment you should have already worked through all the articles in this module, and also have an understanding of HTML basics (study [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)). |
+| :------------- | ------------------------------------------------------------ |
+| Objective:     | To have a play with some CSS and test your new-found knowledge. |
+
+## [Starting point](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Styling_a_biography_page#starting_point)
+
+You can work in the live editor below, or you can [download the starting point file](https://github.com/mdn/css-examples/blob/main/learn/getting-started/biog-download.html) to work with in your own editor. This is a single page containing both the HTML and the starting point CSS (in the head of the document). If you prefer you could move this CSS to a separate file and link to it when you create the example on your local computer.
+
+Alternatively use an online tool such as [CodePen](https://codepen.io/), [jsFiddle](https://jsfiddle.net/), or [Glitch](https://glitch.com/) to work on the tasks.
+
+**Note:** If you get stuck, then ask us for help — see the [Assessment or further help](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Styling_a_biography_page#assessment_or_further_help) section at the bottom of this page.
+
+<!--more-->
+
+## [Project brief](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Styling_a_biography_page#project_brief)
+
+The following live example shows a biography, which has been styled using CSS. The CSS properties that are used are as follows — each one links to its property page on MDN, which will give you more examples of its use.
+
+- [`font-family`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-family)
+- [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+- [`border-bottom`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom)
+- [`font-weight`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight)
+- [`font-size`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size)
+- [`font-style`](https://developer.mozilla.org/en-US/docs/Web/CSS/font-style)
+- [`text-decoration`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)
+
+In the interactive editor you will find some CSS already in place. This selects parts of the document using element selectors, classes, and pseudo-classes. Make the following changes to this CSS:
+
+1. Make the level one heading pink, using the CSS color keyword `hotpink`.
+2. Give the heading a 10px dotted [`border-bottom`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom) which uses the CSS color keyword `purple`.
+3. Make the level 2 heading italic.
+4. Give the `ul` used for the contact details a [`background-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color) of `#eeeeee`, and a 5px solid purple [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border). Use some [`padding`](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) to push the content away from the border.
+5. Make the links `green` on hover.
+
+## [Hints and tips](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Styling_a_biography_page#hints_and_tips)
+
+- Use the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to catch unintended mistakes in your CSS — mistakes you might have otherwise missed — so that you can fix them.
+- Afterwards try looking up some properties not mentioned on this page in the [MDN CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference) and get adventurous!
+- Remember that there is no wrong answer here — at this stage in your learning you can afford to have a bit of fun.
+
+~~~code example
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Formatting a biography</title>
+    <style>
+      body {
+        background-color: #fff;
+        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 1em;
+        margin: 0;
+      }
+
+      h1 {
+        color: hotpink;
+        font-size: 2em;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border-bottom: 10px dotted;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        font-style: italic;
+      }
+
+      .job-title {
+        color: #999999;
+        font-weight: bold;
+      }
+
+      a:link,
+      a:visited {
+        color: #fb6542;
+      }
+     ul {
+         background-color: #eeeeee ;
+         border: 5px solid purple ;
+         padding: 5em ;
+
+
+      }   
+      a:hover {
+        text-decoration: green;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Jane Doe</h1>
+    <div class="job-title">Web Developer</div>
+    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+
+    <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+    </p>
+
+    <h2>Contact information</h2>
+    <ul>
+      <li>Email:
+        <a href="mailto:jane@example.com">jane@example.com</a>
+      </li>
+      <li>Web:
+        <a href="http://example.com">http://example.com</a>
+      </li>
+      <li>Tel: 123 45678</li>
+    </ul>
+
+  </body>
+
+</html>
+~~~
+
