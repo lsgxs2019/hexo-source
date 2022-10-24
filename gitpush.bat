@@ -25,6 +25,7 @@ pause
 git add  .
 @echo  git add . 添加文档完成
 @echo. 
+@echo 正在 commit ,请稍等
 git commit -m "udpate"
 @echo.
 @echo  git  commit 完成
