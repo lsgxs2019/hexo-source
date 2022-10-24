@@ -24,7 +24,10 @@ pause
 @echo=============================lsgxs2019.github.io-git-add-commit-push-start==============================
 git add .
 @echo  git add . 添加文档完成
+@echo 
 git commit -m "udpate"
+@echo
 @echo  git  commit 完成
+@echo 
 git  push origin 
 @echo=============================lsgxs2019.github.io-git-add-commit-push-successfully=========================
