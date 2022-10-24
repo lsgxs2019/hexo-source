@@ -38,7 +38,7 @@ pause
 @echo 当前路径%cd%
 pause 
 @echo 切换到public目录下
-cd c:\hexo-source\public
+cd c:\hexo-source\public    -- 可以在这里试试相对路径：cd public
 @echo 当前路径%cd%
 pause
 

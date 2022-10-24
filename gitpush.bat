@@ -16,7 +16,7 @@ pause
 @echo.
 @echo 当前路径%cd%
 @echo 切换到public目录下
-cd c:\hexo-source\public
+cd public
 @echo 当前路径%cd%
 pause
 @echo.
