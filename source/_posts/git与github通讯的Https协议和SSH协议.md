@@ -21,7 +21,25 @@ cover: /2021/05/30/关于git与github通讯的Https协议和SSH协议/git命令.
   git clone 命令是多个git命令的封装，相当在本地新建立的username.github.io目录，再执行git init 纳入.git管理,自动建立一个master分支（git checkout -b master），自动添加远程连接git remote add origin https://github.com/username.gitbub.io.git，再 git fetch下载数据
   ```
 
-  只是在每次都要输入用户名和邮箱，有点不方便，需要再使用git config  --global  user.name  "git用户名" 和git config --global  user.email "注册git时的邮箱"
+  **通过https协议和github通讯，认证方式一般有用户名+密码、github-token两种方式**。比较推荐token方式，比用户名+密码钥安全。那么怎么使用token方式通过验证呢？
+
+  <!--more-->
+
+  * 首先在github的settings-develpper ->personal access token下生成新的token,然后直接复制token内容，保存在文本文件。
+
+  * 使用git clone https://github.com/username/repoistory-name.git 把项目下载到本地
+
+  * 首次使用需要配置用户名和邮箱，配置完成后，会在windows用户目录下的.gitconfig文件中添加数据项，可以打开查看，.gitcofig是文本文件，可以用记事本直接打开查看或者编辑。
+
+    * git config `--global` user.name "github-username"
+
+    * git config `--global` user.email  "xxxx@126.com"
+
+  * 在修改了本地的项目文件后，执行git commit -m "update"提交时会查询.gitconfig中的用户名和密封数据项，如果没有配置这两项信息，会提示没有认证信息，并给出操作建议，如下图：
+
+    ![img](/images/github/git-first-commit.png)
+
+  * 在 git push origin main 时，正常会弹出github认证对话框，复制粘贴前边生成的token，确定后就可以通过认证，git push 就可以把数据推送到github仓库。如果没有弹出github登录的认证对话框，我的做法时把.gitconfig里的邮箱和用户名数据删除，重新执行git  config `--global` user.name "username"和git config `--global` user.email "user.email",然后再git commit -m "update"、最后git push origin main就可以弹出github登录认证对话框，填写token，确定后就可以正常执行git push 。可以试试不加`--global`的配置方式。不弹出github认证对话框，可能是以内.gitconfig中已经有了用户名和邮箱，以前做过登录认证（具体原因不知道，自己猜的）。 
 
 * ## SSH
 
@@ -43,5 +61,5 @@ cover: /2021/05/30/关于git与github通讯的Https协议和SSH协议/git命令.
   
   
   
-  
+  * 目前推荐使用 ssh-keygen -t ed25519  -C "xxxx@126.com"的 方法生成秘钥对。
 
