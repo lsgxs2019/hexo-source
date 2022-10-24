@@ -30,6 +30,7 @@ git commit -m "udpate"
 @echo.
 @echo  git  commit Íê³É
 @echo. 
+pause
 git  push origin 
 @echo=============================lsgxs2019.github.io-git-add-commit-push-successfully=========================
 
