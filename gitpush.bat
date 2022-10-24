@@ -1,26 +1,30 @@
 @echo off
 
-@echo==========git-add===git-commit==git-push===
+@echo===============================hexo-source-git-add-commit-push-start================================
 git add .
 @echo  git add . 添加文档完成
-
+@echo
+@echo
 git commit -m "udpate"
 @echo  git  commit 完成
-
+@echo 
+@echo
 git  push origin 
-@echo  推送到github 完成================git-push end=
-
-
+@echo==============================hexo-source-git-add-commit-push-successfully============================
+@echo 
+@echo
 @echo 当前路径%cd%
 pause 
 @echo 切换到public目录下
 cd c:\hexo-source\public
 @echo 当前路径%cd%
 pause
-
+@echo 
+@echo 
+@echo=============================lsgxs2019.github.io-git-add-commit-push-start==============================
 git add .
 @echo  git add . 添加文档完成
 git commit -m "udpate"
 @echo  git  commit 完成
 git  push origin 
-@ 推送到lsgxs2019.github.io 完成
+@echo=============================lsgxs2019.github.io-git-add-commit-push-successfully=========================
