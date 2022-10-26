@@ -16,7 +16,7 @@ pause
 @echo.
 @echo 当前路径%cd%
 @echo 切换到public目录下
-cd c:\hexo-source\public
+cd public
 @echo 当前路径%cd%
 pause
 @echo.
@@ -30,6 +30,7 @@ git commit -m "udpate"
 @echo.
 @echo  git  commit 完成
 @echo. 
+pause
 git  push origin 
 @echo=============================lsgxs2019.github.io-git-add-commit-push-successfully=========================
 
