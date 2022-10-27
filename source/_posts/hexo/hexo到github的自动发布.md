@@ -13,7 +13,7 @@ categories: hexo
 
 #### 重新实现Hexo博客到github的自动发布
 
-一直正常的从本地的hexo项目根目录推送到github的hexo-source仓库，根据仓库目录下的workflow文件脚本实现远程的编译、创建、发布到在github的个人站点主页(username.github.io)。不知何故，一个错误信息出现，找了好久没有解决。今天把项目\.github\workflows\目录下的hexo-actions.yml内容重新修改了另外一个版本，重新配置了源码仓库的secrets和静态站点仓库的DeployKey，很顺利成功。没时间，先简单记下大概步骤，以后再详细完善。
+一直正常的从本地的hexo项目根目录推送到github的hexo-source仓库，根据仓库目录下的workflow文件脚本实现远程的编译、创建、发布到在github的个人站点主页(username.github.io)。不知何故，一个错误信息出现，找了好久没有解决。今天把项目\.github\workflows\目录下的hexo-actions.yml内容重新修改了另外一个版本，重新配置了源码仓库的Secrets和静态站点仓库的Deploy Keys，顺利成功。没时间，先简单记下大概步骤，以后再详细完善。
 
 * ssh-keygen -t ed25519  -C "username@126.com"    
 
