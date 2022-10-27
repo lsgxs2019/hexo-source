@@ -28,7 +28,7 @@ categories: windows
 
 ![img](http://b306.photo.store.qq.com/psb?/V10BIiiL0s9pAL/Vw7Y3iyQ2o1l*sNq5A9Ga.dYIeY1Ach2AU3lKIyr1gw!/b/dDIBAAAAAAAA&bo=KgKJAQAAAAADEJU!)
 
-<--more-->
+<!--more-->
 
 在BIOS的I/O device configration项目下，串口、并口和软盘都禁止掉，如下图所示：
 
