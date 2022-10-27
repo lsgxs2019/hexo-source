@@ -57,10 +57,21 @@ cover: /2021/05/30/关于git与github通讯的Https协议和SSH协议/git命令.
   5. 可以使用git remote -v 来查询当前连接的与github.com的连接是使用https:// 协议还是git协议。例如：
   git clone https://github.com/username/username.github.io    //git remote -v  显示的是http协议连接github，git push origin也是。
   git clone git@github.com:username/username.github.io //git remote -v 显示的是git协议连接github，git push origin也是。
+  总结一下： 
+    1、生成密钥对
+    2、在github上添加公钥
+    3、使用 eval $(ssh-agent -s )
+           ssh-add id_ed25519 
+       向ssh代理注册私钥    
+    4、 ssh -T git@github.com  测试链接       
   ```
   
   
   
   * 目前推荐使用 ssh-keygen -t ed25519  -C "xxxx@126.com"的 方法生成秘钥对。
   * 两种方法，推荐使用ssh协议和github通讯，也就是使用ed25519加密的秘钥对。使用https协议+token的方法，在git push时网络不稳定，而使用秘钥对方式效率很高，也许这只是自己的感受吧，暂时不知道具体的原理
+  * ssh在github的两个常见使用场景：
+    * git 与github通讯，把公钥保存在github上,settings->ssh,这个settings是用户的github账号级别
+    * 把私钥保存在仓库的secret里，用来自动化发布的actions脚本里作为变量来引用，settings->secrets->actions，这个settings是仓库级别的。公钥保存在username.github.io的deploy kes。
+    * 这两个场景可以只生成一对密钥就可以，也就是说一对密钥应用在两个场景。可以试试生成两队密钥文件，分别用到不同的场景里。
 
