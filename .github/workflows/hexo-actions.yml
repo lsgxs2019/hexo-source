@@ -30,7 +30,7 @@ jobs:
       id: deploy
       uses: sma11black/hexo-action@v1.0.3
       with:
-        deploy_key: ${{ secrets.hexo-deploy-secret }}
+        deploy_key: ${{ secrets.hexo_deploy_secret2 }}
 
     - name: Get the output
       run: |
