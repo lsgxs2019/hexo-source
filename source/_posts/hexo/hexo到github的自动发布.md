@@ -24,7 +24,7 @@ categories: hexo
   
   * 或者不新增环境变量，直接新建仓库secret，然后记住仓库secret的名字，在workflow脚本里引用时直接使用secrets.hexo_deploy_xxx的格式。
   
-    ![img](/images/RepositorySecrets.png)
+    ![img](/images/github/RepositorySecrets.png)
   
     这个图显示hexo-source仓库里只有Repository Secret，把env_hexo的环境变量删除了，经过测试，依然可以正确的自动化发布。估计环境变量下的多个secrets的应用范围是账户级别的，而仓库级别的Secret只要访问指定的仓库就可以。
     
