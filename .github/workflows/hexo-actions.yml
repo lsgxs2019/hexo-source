@@ -1,36 +1,41 @@
-Deploy
+name: Hexo Deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    name: A job to deploy blog.
+    runs-on: ubuntu-18.04
+    if: github.event.repository.owner.id == github.event.sender.id
+
     steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+        with:
+          ref: main
 
-    - name: Checkout
-      uses: actions/checkout@v1
-      with:
-        submodules: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
 
-    - name: Cache node modules
-      uses: actions/cache@v1
-      id: cache
-      with:
-        path: node_modules
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-                    ${{ runner.os }}-node-
-    - name: Install Dependencies
-      if: steps.cache.outputs.cache-hit != 'true'
-      run: npm ci
+      - name: Setup Hexo
+        env:
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_SECRET2 }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "lsgxs141@126.com"
+          git config --global user.name "lsgxs2019"
+          npm install hexo-cli -g
+          npm install
 
-    - name: Deploy
-      id: deploy
-      uses: sma11black/hexo-action@v1.0.3
-      with:
-        deploy_key: ${{ secrets.hexo_deploy_secret2 }}
-
-    - name: Get the output
-      run: |
-                echo "${{ steps.deploy.outputs.notify }}
+      - name: Deploy
+        run: |
+          hexo clean
+          hexo deploy
