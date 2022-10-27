@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to deploy blog.
     steps:
-<<<<<<< HEAD
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: Checkout Repository master branch
@@ -52,8 +51,7 @@ jobs:
         git add .
         git commit -F ../commit-message.log
         git push --force --quiet "https://${Github_Token}@${Github_Pages}" main:main
-=======
->>>>>>> 2a4616e57fa8795c4a3dff031a313813b178f5ac
+
 
     - name: Checkout
       uses: actions/checkout@v1
