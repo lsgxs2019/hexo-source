@@ -1,18 +1,13 @@
-# workflow name
-name: CI Hexo Blog Deploy LTS
+name: Deploy
 
-# source branch on push, auto run
-on: 
-  push:
-    branches:
-      - source
+on: [push]
 
 jobs:
-  Deploy-Pages: 
-    name: Deploy Hexo Public To Pages
-    runs-on: ubuntu-latest 
-        
+  build:
+    runs-on: ubuntu-latest
+    name: A job to deploy blog.
     steps:
+<<<<<<< HEAD
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: Checkout Repository master branch
@@ -57,4 +52,33 @@ jobs:
         git add .
         git commit -F ../commit-message.log
         git push --force --quiet "https://${Github_Token}@${Github_Pages}" main:main
+=======
+>>>>>>> 2a4616e57fa8795c4a3dff031a313813b178f5ac
 
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      id: cache
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+                    ${{ runner.os }}-node-
+
+    - name: Install Dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: npm ci
+
+    - name: Deploy
+      id: deploy
+      uses: sma11black/hexo-action@v1.0.3
+      with:
+        deploy_key: ${{ secrets.hexo_deploy_secret2 }}
+
+    - name: Get the output
+      run: |
+                echo "${{ steps.deploy.outputs.notify }}"
