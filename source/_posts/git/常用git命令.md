@@ -14,9 +14,9 @@ categories: git
 * 从远程仓库下载项目到本地
 
   ~~~
-  git clone git@github.com:username/repo_name.git 
-  git clone https://github.com/username/repo_name.git
-  
+  git clone git@github.com:username/repo_name.git     
+  git clone https://github.com/username/repo_name.git 
+     --两种方法任选一种，推荐使用第一种。
   git add  .
   git  commit -m   "your-comment of updates"
   git push origin local-branch:remote-branch
