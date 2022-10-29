@@ -31,11 +31,20 @@ categories: git
   git commit -m "update"
   git remote add origin git@github.com:username/repo_name.git 
   git push -u origin main 
-      
-    
+   
   ~~~
 
   <!--more-->
+
+  注意，这里说的是在github上新建的是空仓，也就是没有初始化的仓库（新建时没有包含readme文件），如果包含readme文件后，在上面的推送步骤就会提示错误：
+
+  ![img](/images/github/git-push-err.png)
+
+  意识是远程有一些变动，在本地没有，需要合并后在推送。需要用带有`--reabase`参数的git pull 执行合并，然后再推送到远程就可以了。
+
+  `git push --rebase origin main`
+
+  
 
 * 查看分支
 
