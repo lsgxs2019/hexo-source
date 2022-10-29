@@ -14,13 +14,13 @@ cover:
 >
 > git conig `--global` user.name "yourusername"
 >
-> git config `--global`` user.email "your mailbox"
+> git config `--global` user.email "your mailbox"
 >
 > 其实也可以使用git config --list 来显示当前的全局参数列表，如果发现有自己用的github用户,就说明以前配置的参数是全局的，现在使用下面两条语句取消全局配置：
 >
-> git config  `--global`  --unset user.name
+> git config  `--global`  `--unset` user.name
 >
-> git config `--global`   --unset user.email
+> git config `--global`   `--unset` user.email
 
 <!--more-->
 
