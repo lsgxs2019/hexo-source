@@ -45,17 +45,17 @@ categories: git
 * 查看分支
 
   ~~~
-  git  branch   --查看本地分支
+  git  branch    --查看本地分支
   git branch -r  --查看远程分支
   git branch -a  --查看所有分支
   ~~~
-
-* 删除分支
+* 查看当前工作状态
+  ~~~
+  git status   --经常查看状态，可以看到当前工作的提示信息
+  ~~~
+*  删除分支
 
   ~~~
   git branch -d branch-name   --删除本地分支
   git push origin  --delete remote-branch   --删除远程分支
-    --或者:git push origin   :remote-branch   --用本地空分支推送到对应的远程仓库分支
-  ~~~
-
-  
+    --或者:git push origin   :remote-branch   --用本地空分支推送到对应的远程仓库分支,也可以删除远程分支
