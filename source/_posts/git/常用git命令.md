@@ -63,8 +63,7 @@ categories: git
 
 * 在新建一个github仓库时，如果包含了readme来初始化仓库时，把本地项目推送到github时，会提示禁止推送，远程有工作需要和本地合并。因此，需要先使用`git pull --rebase origin main `合并远程仓库。
 
-* git-bash 小技巧
-
+*  git-bash 小技巧
   ~~~
   1、经常在git-bash 中使用cd ~/.ssh,其中的~带表着当前用户目录，时间久了不用git的话，也许会忘记。
   2、在git-bash命令终端里复制和粘贴快捷键：
