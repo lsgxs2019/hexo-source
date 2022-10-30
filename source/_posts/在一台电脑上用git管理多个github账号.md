@@ -160,4 +160,4 @@ git config user.email   yourmailbox
 
 
 
-> （装好node.js和git，使用ssh-keygen生成密钥文件之后，如果在当前windows用户目录下没有.ssh文件夹，估计是安装windows时的用户权限不足，不能在用户目录下创建.ssh目录目前没有实践找出好办法，只能重新安装windows，试着获取用户目录所有权和完全控制权也没结果，不知到为何）
+> （装好node.js和git，使用ssh-keygen生成密钥文件之后，如果在当前windows用户目录下没有.ssh文件夹，估计是安装windows时的用户权限不足，不能在用户目录下创建.ssh目录目前没有实践找出好办法，只能重新安装windows（实在不方便就之只能先开启Windows的Hyper-V建立个虚拟机，在虚拟机里做）。试着获取用户目录所有权和完全控制权也没结果，不知到为何）
