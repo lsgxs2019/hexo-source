@@ -54,11 +54,11 @@ cover:
 >
 >   eval $(ssh-agent -s )   注意这里-s是小写,启动ssh agent
 >
->   ssh-add ~/.ssh/id_rsa_hexo
+>   ssh-add ~/.ssh/id_rsa_xxxxx
 >
->   ssh-add ~/.ssh/id_rsa_tiddlywiki2021
+>   ssh-add ~/.ssh/id_rsa_tiddlyxxxxx
 >
->   ssh-add ~/.ssh/id_rsa_hugo
+>   ssh-add ~/.ssh/id_rsa_yyyyyy
 >
 >   这三条语句是添加在前面生成的三个私钥
 
@@ -70,8 +70,8 @@ cover:
 #first
 Host hexo
 HostName github.com
-User lsgxs2019
-IdentityFile ~/.ssh/id_rsa_hexo
+User ls_abcdefg
+IdentityFile ~/.ssh/id_rsa_xxxx
 # second
 Host tiddlywiki
 HostName github.com
@@ -80,12 +80,20 @@ IdentityFile ~/.ssh/id_rsa_tiddlywiki
 #Third
 Host hugo
 HostName github.com
-User lsgxs
+User ls_abceefg
 IdentityFile ~/.ssh/id_rsa_hugo
 
 ~~~
 
 这里的总共记录了三个账号对应的信息，其中Host实际上个别名，可以替代ssh协议中git@host：写法的主机名称部分。
+
+* 有了配置文件的设置后，向远程的github仓库添加连接时要使用主机别名的方式，比如
+
+  ~~~
+  git  remote add origin git@hugo:username/username.github.io.git     
+  ~~~
+
+  
 
 config编辑完成后，可以使用
 
@@ -115,6 +123,8 @@ cd  username.github.io
 git config user.name   username
 
 git config user.email   yourmailbox
+
+这个git config 是用户级别的配置，非全局配置
 
 到这里就算成功了，可以新增加一下文件，然后正常的提交：
 
