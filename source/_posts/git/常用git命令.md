@@ -72,5 +72,30 @@ categories: git
                    --当然如果要粘贴在windows还是直接ctrl+v
                    --因为有的连接路径很长，可以复制和粘贴的话可以减少错误 
   ~~~
+*  git remote 
+
+  * git remote add origin git@hugo:username/username.github.io.git
+
+    添加一个指向远程github仓库的连接，别名为origin 
+
+  * git remote remove  origin 
+
+    这个命令用来删除错误的或者不需要的连接
+
+* 新建一个独立分支
+
+  ~~~
+  git  checkout  --orphan gh-pages
+  echo "hello world" > readme.md    --在分支下新建一个readme.md文件
+  git  add .
+  git commit -m "add orphan branch"
+  git push origin gh-pages:gh-pages  --当然，冒号后边的gh-pages可以省略，远程会自动建立与本地同                                      --名的分支，这里是明确一下本地和远程分支的对应关系。
+  git  branch -a                     --通过git-add-commit-push ，这里才能查看到新建的独立分支
+  最后可以把gh-pages分支下除了.git目录之外的所有内容删除，建立分支时会默认复制main分支的内容。然后再使用git-add-commit-push这个流程，可以把远程的的gh-pages分支内容也删除掉。
+  git checkout  main --切换到main分支，可以看到main分支下原有的内容
+  ~~~
 
   
+
+
+
