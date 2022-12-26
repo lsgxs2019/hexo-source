@@ -50,11 +50,24 @@ categories: git
   git branch -r  --查看远程分支
   git branch -a  --查看所有分支
   ~~~
+  
 * 查看当前工作状态
   ~~~
   git status   --经常查看状态，可以看到当前工作的提示信息
   ~~~
-*  删除分支
+
+*   回退到指定版本
+  
+  ~~~
+  git  log   --按时间顺序显示commit的历史记录,ctrl+insert复制指定的commit右侧的编码，比如：6a1d37153862a468f773762e38a29180f4db4467
+  git  reset --hard 6a1d37153862a468f773762e38a29180f4db4467    --shift+insert粘贴编码
+  git push -f origin main   --这里最后的参数是指定的分支名称   
+  
+  ~~~
+  
+  
+  
+*    删除分支
 
   ~~~
   git branch -d branch-name   --删除本地分支
@@ -72,6 +85,7 @@ categories: git
                    --当然如果要粘贴在windows还是直接ctrl+v
                    --因为有的连接路径很长，可以复制和粘贴的话可以减少错误 
   ~~~
+  
 *  git remote 
 
   * git remote add origin git@hugo:username/username.github.io.git
