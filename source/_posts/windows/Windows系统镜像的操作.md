@@ -54,3 +54,5 @@ f:\windows101903\sources>dism  /Export-image   /sourceimagefile:install.wim  /so
 提取到指定的镜像之后，可以把原来的Sources\install.wim删除，把这个提取出来的wim文件重命名为install.wim，复制到sources文件夹下面,这样就实现了指定版本的定制，在Winpe下的Dism++下，利用Dism++的还原功能实现WIndwos10的安装，可以简单实现win7系统和win10双系统共存。（Dism++的wim文件还原功能似乎没有选择指定镜像索引的界面，所以使用dism命令提取自己需要的那个版本wim）
 ~~~
 
+* 顺便去官网看看bcdboot的文档
+  * [bcdboot]([BCDBoot Command-Line Options | Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/bcdboot-command-line-options-techref-di?view=windows-11))
