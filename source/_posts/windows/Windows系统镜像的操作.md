@@ -3,8 +3,10 @@ title: Windows系统镜像的操作
 date: 2023-01-28 23:00:01
 tags:
 ---
+关于Windows dism 的操作可以在微软公司的官方文档中查询，很好很强大。好多年没用了，以前的笔记也找不到了，这里只是记录一个实用的操作，更多的细节和知识去官网查询。
+<!--more-->
 
-* 查看Windows镜像信息
+*  查看Windows镜像信息
 
   ~~~
   f:\windows101903\sources>dism   /Get-Wiminfo    /Wimfile:install.wim
@@ -49,6 +51,6 @@ tags:
 
 f:\windows101903\sources>dism  /Export-image   /sourceimagefile:install.wim  /sourceindex:3 /destinationimagefile:F:\win10pro1903.wim
 
-提取到指定的镜像之后，可以把原来的Sources\install.wim删除，把这个提取出来的wim文件重命名为install.wim，复制到sources文件夹下面,这样就实现了指定版本的定制，在Winpe下的Dism++下，利用Dism++的还原功能实现WIndwos10的安装，可以简单实现win7系统和win10双系统共存。（Dism++的wim文件还原功能似乎没有选择指定镜像索引的界面，所以使用dism命令提取）
+提取到指定的镜像之后，可以把原来的Sources\install.wim删除，把这个提取出来的wim文件重命名为install.wim，复制到sources文件夹下面,这样就实现了指定版本的定制，在Winpe下的Dism++下，利用Dism++的还原功能实现WIndwos10的安装，可以简单实现win7系统和win10双系统共存。（Dism++的wim文件还原功能似乎没有选择指定镜像索引的界面，所以使用dism命令提取自己需要的那个版本wim）
 ~~~
 
