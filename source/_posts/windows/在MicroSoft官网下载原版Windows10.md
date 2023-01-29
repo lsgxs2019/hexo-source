@@ -1,6 +1,11 @@
+---
+title: 在Mcirosoft官网下载原版Windows10系统
+date: 2023-01-29 10:42:28
+tags: Windows
+categories: windows 
+---
+
 #### 在Mcirosoft官网下载原版Windows10系统
-
-
 
 第一步，进入[微软官方网站](https://www.microsoft.com/zh-cn/software-download/windows10),界面里没有直接下载win10系统文件的按钮，设置一下，显示出原版Windows下载列表。
 
