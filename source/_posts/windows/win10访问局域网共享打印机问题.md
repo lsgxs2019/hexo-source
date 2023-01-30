@@ -14,6 +14,8 @@ categories:  打印机
 
 ![img](/images/Win10Printer/1.jpg)
 
+<!--more-->
+
 ![img](/images/Win10Printer/2.jpg)
 
 ![img](/images/Win10Printer/3.jpg)
