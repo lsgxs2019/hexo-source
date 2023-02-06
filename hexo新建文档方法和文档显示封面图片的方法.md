@@ -1,5 +1,5 @@
 ---
-title: hexo 新建文档的方法
+title: hexo新建文档的方法
 date: 2022-09-22 10:48:04
 tags:
   - hexo 
@@ -21,3 +21,9 @@ categories: hexo
   
   * 如果要在文档中引用图片文件，和文档同目录下的同名目录下图片却无法正常显示，只能想办法把要引用的图片文件放在source/images目录下，图片文件也可以分类存放，在markdown文件中引用时指定对应的目录和文件路径即可。
 
+* 如何显示封面图片
+
+  * 首先文档要保存在`_posts`下，而不是子目录下；其次是在`_posts`下新家一个和文档"title"字符串的子目录，封面图片要保存在这个子目录下。
+  * 然后在文档的frontmatte中设置cover:    /yyyy/mm/dd/title/title-dir/image-name.png
+
+  `cover: /2022/09/22/hexo新建文档的方法/image-name.png`
