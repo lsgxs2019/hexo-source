@@ -15,7 +15,7 @@ categories: hexo
 
 * `hexo new   --path  dir-name/file-name.md "title"`
 
-  这样就会在`source/_posts/dir-name`目录下生成file-name.md的markdown文件和同名的一个目录。如下图：
+  切换到博客项目根目录下，弹出鼠标右键快捷菜单，然后选择“git bash  here”菜单项打开git bash 终端，输入上面的一串命令，就会在`source/_posts/dir-name`目录下生成file-name.md的markdown文件和同名的一个目录。如下图：
 
   ![img](/images/hexo/hexo新建文档方法/hexo-new-path.png)
   
